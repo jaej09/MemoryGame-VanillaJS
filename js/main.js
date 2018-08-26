@@ -109,10 +109,31 @@ var MemoryGame = (function () {
   }
 
   return {
-    init: init,
-    flipCard: flipCard
+    init,
+    flipCard
   };
 
 }());
 
+var KeyboardSound = (function () {
+
+  const audio = document.querySelector('audio');
+  console.log(audio);
+
+  function playSound(e) {
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  function init() {
+    window.addEventListener('keydown', playSound);
+  }
+
+  return {
+    init
+  }
+
+}());
+
 MemoryGame.init();
+KeyboardSound.init();

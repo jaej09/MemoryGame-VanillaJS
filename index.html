@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="./css/materialize.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <nav class="main-nav" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Hello</a>
+    </div>
+  </nav>
+
+  <div class="clearfix container-wrap">
+    <div class="memory-game__wrap">
+      <div class="memory-game" id="memory-game"></div>
+    </div>
+
+    <style scoped contenteditable>
+
+      body {
+        background: white;
+      }
+
+      .memory-game {
+        background-color: #f3e8cb;
+        border-radius: 10px;
+      }
+
+      .memory-game__card.is-clicked .card--front {
+        -webkit-transform: perspective(600px) rotateY(-180deg);
+        transform: perspective(600px) rotateY(-180deg);
+      }
+
+      .memory-game__card.is-clicked .card--back {
+        -webkit-transform: perspective(600px) rotateY(0deg);
+        transform: perspective(600px) rotateY(0deg);
+      }
+
+      .card--front {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: perspective(600px) rotateY(0deg);
+        transform: perspective(600px) rotateY(0deg);
+        -webkit-transition: -webkit-transform .4s linear 0s;
+        transition: -webkit-transform .4s linear 0s;
+        transition: transform .4s linear 0s;
+        transition: transform .4s linear 0s, -webkit-transform .4s linear 0s;
+        background-color: #f2c6b4;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .card--back {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: perspective(600px) rotateY(180deg);
+        transform: perspective(600px) rotateY(180deg);
+        -webkit-transition: -webkit-transform .4s linear 0s;
+        transition: -webkit-transform .4s linear 0s;
+        transition: transform .4s linear 0s;
+        transition: transform .4s linear 0s, -webkit-transform .4s linear 0s;
+        background-color: #ffffffcc;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: perspective(600px) rotateY(180deg);
+      }
+    </style>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="white-text">Memory Game for Educational Purpose</h5>
+          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id purus mi. Donec auctor nibh erat, et placerat ante gravida at. Quisque a gravida dolor, ut dictum magna. Nam ac vehicula turpis. Mauris vitae pharetra turpis. Vestibulum quis eros ornare felis condimentum ultricies quis id ligula. Nulla ultricies dolor enim, cursus maximus mauris blandit nec.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by
+        <a class="orange-text text-lighten-3" href="jaejin.info">Jae Jin</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio src="./sounds/key.wav"></audio>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

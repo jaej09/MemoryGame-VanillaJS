@@ -1,3 +1,7 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Space+Mono');
+
+/* Global */
 html {
   box-sizing: border-box;
 }
@@ -6,16 +10,68 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
 img {
   width: 100%;
 }
 
-.memory-game {
+/* Contenteditable */
+.container-wrap style {
   width: 700px;
+  display: block;
+  float: left;
+  white-space: pre-wrap;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  line-height: 2em;
+}
+
+[contenteditable]:before {
+  content: 'EDIT ME!';
+  position: relative;
+  left: 47px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+[contenteditable]:active,
+[contenteditable]:focus {
+  border: none;
+  outline: none;
+}
+
+/* Clearfix */
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.container-wrap {
+  width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+/* Body */
+nav.main-nav {
+  background-color: #99e1e5;
+  text-align: center;
+}
+
+.memory-game {
+  width: 700px;
   padding: 10px;
-  background-color: #111f4d;
+  float: left;
+  background-color: #f3e8cb;
   border-radius: 10px;
   &__card {
     margin: 10px;
@@ -43,7 +99,7 @@ img {
     backface-visibility: hidden;
     transform: perspective(600px) rotateY(0deg);
     transition: transform .4s linear 0s;
-    background-color: #f2f4f7;
+    background-color: #f2c6b4;
     background-image: url("./../img/cover.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -56,9 +112,13 @@ img {
     backface-visibility: hidden;
     transform: perspective(600px) rotateY(180deg);
     transition: transform .4s linear 0s;
-    background-color: #f2f4f7;
+    background-color: #ffffffcc;
     background-size: contain;
     background-repeat: no-repeat;
     transform: perspective(600px) rotateY(180deg);
   }
+}
+
+footer.page-footer {
+  background-color: #f2c6b4;
 }
