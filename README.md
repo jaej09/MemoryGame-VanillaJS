@@ -2,6 +2,7 @@
 
 > This is a pure JavaScript practice without any frameworks, no compilers, no boilerplate, and no libraries.
 
-!(https://jaej09.github.io/MemoryGame-VanillaJS/img/screenshot.png)
+![screenshot](https://jaej09.github.io/MemoryGame-VanillaJS/img/screenshot.png)
 
-Try editing CSS [demo](https://jaej09.github.io/MemoryGame-VanillaJS/index.html)
+View demo [here](https://jaej09.github.io/MemoryGame-VanillaJS/index.html)
+__Try editing CSS__
