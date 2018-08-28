@@ -17,7 +17,7 @@ var MemoryGame = (function () {
 
     var output = '';
     for (var i = 0; i < num_card; i++) {
-      output += `<div class="memory-game__card" id="card-${i}" data-img=${img_name_shuffled[i]} onclick="MemoryGame.flipCard(this)"><div class="card--front" id="front"></div><div class="card--back" id="back"></div></div>`;
+      output += `<div class="memory-game__card" id="card-${i}" data-img=${img_name_shuffled[i]} onclick="MemoryGame.flipCard(this, ${img_name_shuffled[i]})"><div class="card--front" id="front"></div><div class="card--back" id="back"></div></div>`;
     }
     document.getElementById('memory-game').innerHTML = output;
 
@@ -79,6 +79,7 @@ var MemoryGame = (function () {
     if (memory_value.length < 2) {
       // Add a class to style the card
       card.classList.add('is-clicked');
+      back.style.backgroundImage = `url(img/${img}.png)`;
       if (memory_value.length === 0) {
         memory_value.push(img);
         memory_card_id.push(card.id);
