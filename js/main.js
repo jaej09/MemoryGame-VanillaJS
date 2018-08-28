@@ -17,9 +17,29 @@ var MemoryGame = (function () {
 
     var output = '';
     for (var i = 0; i < num_card; i++) {
-      output += '<div class="memory-game__card" id="card-' + i + '" onclick="MemoryGame.flipCard(this, \'' + img_name_shuffled[i] + '\')"><div class="card--front" id="front"></div><div class="card--back" id="back"></div></div>';
+      output += `<div class="memory-game__card" id="card-${i}" data-img=${img_name_shuffled[i]} onclick="MemoryGame.flipCard(this)"><div class="card--front" id="front"></div><div class="card--back" id="back"></div></div>`;
     }
     document.getElementById('memory-game').innerHTML = output;
+
+    // Show card
+    let cards = document.querySelectorAll('.memory-game__card');
+    let time = 1000;
+    cards.forEach(card => {
+      let back = card.children[1];
+      let backImg = card.getAttribute('data-img');
+      setTimeout(() => {
+        card.classList.add('is-clicked');
+        back.style.backgroundImage = `url(img/${backImg}.png)`;
+      }, time);
+      time += 200;
+    });
+
+    cards.forEach(card => {
+      let front = card.children[0];
+      setTimeout(() => {
+        card.classList.remove('is-clicked');
+      }, 5000);
+    });
 
     // start measuring time
     startGameTime();
@@ -59,7 +79,6 @@ var MemoryGame = (function () {
     if (memory_value.length < 2) {
       // Add a class to style the card
       card.classList.add('is-clicked');
-      back.style.backgroundImage = 'url(img/' + img + '.png)';
       if (memory_value.length === 0) {
         memory_value.push(img);
         memory_card_id.push(card.id);
