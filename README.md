@@ -4,7 +4,7 @@
 
 ![screenshot](https://jaej09.github.io/MemoryGame-VanillaJS/img/screenshot.png)
 
-View demo [here](https://jaej09.github.io/MemoryGame-VanillaJS/index.html)
+View demo [here](https://jaej09.github.io/MemoryGame-VanillaJS/)
 
 ### All about features
 - Added a real-time in-browser editor with the HTML5′s contenteditable attribute.
